@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Form</title>
+</head>
+<body>
+    <h2>Submission Form</h2>
+    <form id="submission-form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="time">Time:</label><br>
+        <input type="time" id="time" name="time" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const form = document.getElementById('submission-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            fetch('https://script.google.com/macros/s/AKfycbwKxAYoyi3imGiDGScSPT2S3p4xl83dSMv2cbmP_kp1fsAa1rmjHvO0M1eNoqSt4cH6eA/exec', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => response.json()).then(data => {
+                if (data.status === 'success') {
+                    alert('Submission successful!');
+                } else {
+                    alert('Submission failed. Please try again.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+                alert('Submission failed. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
+
