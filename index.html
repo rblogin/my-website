@@ -1,59 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Submission</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission</title>
 </head>
 <body>
-    <h1>Form Submission</h1>
-    <form id="dataForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required><br><br>
-        
-        <label for="time">Time:</label>
-        <input type="time" id="time" name="time" required><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>
+  <h1>Form Submission</h1>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <br>
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" required>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
 
-    <script>
-        document.getElementById('dataForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-
-            const data = {
-                name: name,
-                date: date,
-                time: time
-            };
-
-            fetch('https://script.google.com/macros/s/AKfycbwjbxT-73BP_bK9Jw36gH43HJ3EB1NVdcnVNX6O0U7CZYCbGRl0rR46wnBzu9uDIMHq/exec', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.result === "success") {
-                    alert("Form submitted successfully!");
-                } else {
-                    alert("There was an error submitting the form.");
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("There was an error submitting the form.");
-            });
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
