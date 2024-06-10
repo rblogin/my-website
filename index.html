@@ -469,7 +469,12 @@ $(function(){
           form.addEventListener('submit', e => {
           e.preventDefault()
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-         .then(response => console.log('Success!', response))
+         if (response.ok) {
+      alert("Appointment booked successfully!");
+      document.getElementById("appointmentForm").reset();
+    } else {
+      alert("Error submitting form.");
+    }
          .catch(error => console.error('Error!', error.message))
          })
          </script>
