@@ -519,26 +519,26 @@ $(function(){
             });
         })
     </script> -->
-   <script>
+  <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw2ROk8O7Hwt6bU2M4Gg9ex3usuzheLBzlKgP5DRbeyboKSkVMXBbHK5rBPHpUsUtmvnw/exec'
         const form = document.forms['submit-to-google-sheet']
         const spinner = document.getElementById('spinner');
 
         form.addEventListener('submit', e => {
-            e.preventDefault()
+            e.preventDefault();
             spinner.style.display = 'block'; // Show spinner
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                spinner.style.display = 'none'; // Hide spinner
+                spinner.style.display = 'none'; // Hide spinner before showing alert
                 alert('Form submitted successfully!');
                 console.log('Success!', response);
             })
             .catch(error => {
-                spinner.style.display = 'none'; // Hide spinner
+                spinner.style.display = 'none'; // Hide spinner before showing alert
                 console.error('Error!', error.message);
                 alert('An error occurred: ' + error.message);
             });
-        })
+        });
     </script>
 
 </body>
