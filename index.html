@@ -22,6 +22,27 @@
     <link rel="stylesheet" href="assets/css/templatemo-space-dynamic.css">
     <link rel="stylesheet" href="assets/css/animated.css">
     <link rel="stylesheet" href="assets/css/owl.css">
+     <style>
+        /* Spinner styles */
+        .spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
 <!--
     
 TemplateMo 562 Space Dynamic
@@ -419,7 +440,8 @@ https://templatemo.com/tm-562-space-dynamic
               <img src="assets/images/contact-decoration.png" alt="">
             </div> -->
           </form>
-           <div id="loading-message" style="display: none;">Submitting...</div>
+<!--            <div id="loading-message" style="display: none;">Submitting...</div> -->
+          <div id="spinner" class="spinner"></div>
         </div>
       </div>
     </div>
@@ -476,7 +498,7 @@ $(function(){
          .catch(error => console.error('Error!', error.message))
          })
          </script> -->
-   <script>
+<!--    <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw2ROk8O7Hwt6bU2M4Gg9ex3usuzheLBzlKgP5DRbeyboKSkVMXBbHK5rBPHpUsUtmvnw/exec'
         const form = document.forms['submit-to-google-sheet']
         const loadingMessage = document.getElementById('loading-message');
@@ -492,6 +514,27 @@ $(function(){
             })
             .catch(error => {
                 loadingMessage.style.display = 'none'; // Hide loading message
+                console.error('Error!', error.message);
+                alert('An error occurred: ' + error.message);
+            });
+        })
+    </script> -->
+   <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw2ROk8O7Hwt6bU2M4Gg9ex3usuzheLBzlKgP5DRbeyboKSkVMXBbHK5rBPHpUsUtmvnw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const spinner = document.getElementById('spinner');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            spinner.style.display = 'block'; // Show spinner
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                spinner.style.display = 'none'; // Hide spinner
+                alert('Form submitted successfully!');
+                console.log('Success!', response);
+            })
+            .catch(error => {
+                spinner.style.display = 'none'; // Hide spinner
                 console.error('Error!', error.message);
                 alert('An error occurred: ' + error.message);
             });
