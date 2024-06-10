@@ -531,6 +531,7 @@ $(function(){
             .then(response => {
                 spinner.style.display = 'none'; // Hide spinner before showing alert
                 alert('Form submitted successfully!');
+                form.reset();
                 console.log('Success!', response);
             })
             .catch(error => {
