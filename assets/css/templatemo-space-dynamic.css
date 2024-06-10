@@ -295,7 +295,7 @@ header
 }
 
 .header-area .main-nav .logo h4 {
-    font-size: 24px;
+    font-size: 15px;
     font-weight: 700;
     text-transform: uppercase;
     color: #373A40;
@@ -874,10 +874,10 @@ Banner Style
 }
 
 .main-banner .left-content h2 {
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 700;
   color: #2a2a2a;
-  line-height: 72px;
+  line-height: 44px;
 }
 
 .main-banner .left-content h2 em {
