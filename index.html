@@ -1,21 +1,477 @@
-<form name="submit-to-google-sheet">
-  <input name="email" type="email" placeholder="Email" required>
-  <input name="firstName" type="text" placeholder="First Name">
-  <input name="lastName" type="text" placeholder="Last Name">
-  <button type="submit">Send</button>
-</form>
-<script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-<script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-<script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+<!DOCTYPE html>
+<html lang="en">
 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbw2ROk8O7Hwt6bU2M4Gg9ex3usuzheLBzlKgP5DRbeyboKSkVMXBbHK5rBPHpUsUtmvnw/exec'
-  const form = document.forms['submit-to-google-sheet']
+  <head>
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Discover hassle-free travel in Jorhat with Classic Taxi Service. Our GPS-equipped fleet offers transparent pricing and air-conditioned comfort, ensuring a seamless ride every time. Book now for reliable service and explore Jorhat stress-free">
+    <meta name="author" content="By: Classic Taxi Service Team Jorhat">
+    <meta name="keywords" content="Jorhat taxi service,Reliable transportation in Jorhat,Comfortable rides in Jorhat,Affordable taxi service,Jorhat car rental,Seamless travel experience,GPS-equipped taxis,Transparent pricing,Air-conditioned vehicles,Hassle-free booking">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <title>Jorhat's Choice: Classic Taxi Service - Your Comfortable Journey Begins Here</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-space-dynamic.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+<!--
+    
+TemplateMo 562 Space Dynamic
+
+https://templatemo.com/tm-562-space-dynamic
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <h4>CTS</h4>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#about">Services</a></li>
+              <li class="scroll-to-section"><a href="#services">Taxi Fare</a></li>
+              <!-- <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li> -->
+              <!-- <li class="scroll-to-section"><a href="#blog">Blog</a></li> 
+              <li class="scroll-to-section"><a href="#contact">Message Us</a></li>  -->
+              <li class="scroll-to-section"><div class="main-red-button"><a href="#contact">Book Now</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <!-- <h6>Welcome to Space Dynamic</h6> -->
+                <h2>Travel with Class <em> Classic Taxi Service</em><span></span> Reliable, Elegant, Affordable</h2>
+                <p>At Classic Taxi Service, we ensure every ride is comfortable, safe, and on time. Trust us for reliable and elegant transportation, wherever you need to go.</p>
+                <a href="#contact" class="btn btn-outline-danger">Book Now</a>
+                 <!-- <div class="container"> -->
+    <!-- <h1 class="mt-5">Customized Bootstrap Button Links</h1> -->
+    <!-- <a href="https://www.example.com" class="btn btn-primary btn-lg">Large Button Link</a> -->
+                 
+    <!-- <a href="https://www.example.com" class="btn btn-success btn-block">Block Button Link</a> -->
+                <!-- </div> -->
+                <!-- <a href="#contact" class="main-button">Book Now</a> -->
+             <!--  <form id="search" action="#" method="GET">
+                  <fieldset>
+                    <input type="address" name="address" class="email" placeholder="" autocomplete="on" required>
+                  </fieldset>
+                  <fieldset>
+                    <button type="submit" class="main-button">Analyze Site</button>
+                  </fieldset>
+                </form>  -->
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/banner-right-image.png" alt="team meeting">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="assets/images/about-left-image.png" alt="person graphic">
+          </div>
+        </div>
+        <div class="col-lg-8 align-self-center">
+          <div class="services">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <!-- <div class="icon">
+                    <img src="assets/images/service-icon-01.png" alt="reporting">
+                  </div> -->
+                  <div class="right-text">
+                    <h4>Service Time</h4>
+                    <p>We are available 24/7. Call or book online, and we'll be there quickly.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+                  <!-- <div class="icon">
+                    <img src="assets/images/service-icon-02.png" alt="">
+                  </div> -->
+                  <div class="right-text">
+                    <h4>Payment</h4>
+                    <p>
+                    Pay only for what you use. Our meter and printer ensure transparent, affordable rates</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
+                  <!-- <div class="icon">
+                    <img src="assets/images/service-icon-03.png" alt="">
+                  </div> -->
+                  <div class="right-text">
+                    <h4>Track Location</h4>
+                    <p>Our GPS-equipped cars keep you connected with us on the go.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="1.1s">
+                  <!-- <div class="icon">
+                    <img src="assets/images/service-icon-04.png" alt="">
+                  </div> -->
+                  <div class="right-text">
+                    <h4>Car Facility</h4>
+                    <p>All our cars have air conditioning to ensure your comfort during the ride.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="our-services section">
+    <div class="container">
+      <div class="row">
+       <!--  <div class="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="left-image">
+            <img src="assets/images/services-left-image.png" alt="">
+          </div>
+        </div> -->
+        <div class="" data-wow-duration="1s" data-wow-delay="0.2s">
+          <div class="section-heading">
+            <h2>Taxi Fare</h2>
+            <p>Space Dynamic HTML5 template is free to use for your website projects. However, you are not permitted to redistribute the template ZIP file on any CSS template collection websites. Please contact us for more information. Thank you for your kind cooperation.</p>
+          </div>
+         <!--  <div class="row">
+            <div class="col-lg-12">
+              <div class="first-bar progress-skill-bar">
+                <h4>Website Analysis</h4>
+                <span>84%</span>
+                <div class="filled-bar"></div>
+                <div class="full-bar"></div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="second-bar progress-skill-bar">
+                <h4>SEO Reports</h4>
+                <span>88%</span>
+                <div class="filled-bar"></div>
+                <div class="full-bar"></div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="third-bar progress-skill-bar">
+                <h4>Page Optimizations</h4>
+                <span>94%</span>
+                <div class="filled-bar"></div>
+                <div class="full-bar"></div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h2>See What Our Agency <em>Offers</em> &amp; What We <span>Provide</span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+              <div class="hidden-content">
+                <h4>SEO Analysis</h4>
+                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
+              </div>
+              <div class="showed-content">
+                <img src="assets/images/portfolio-image.png" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+              <div class="hidden-content">
+                <h4>Website Reporting</h4>
+                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
+              </div>
+              <div class="showed-content">
+                <img src="assets/images/portfolio-image.png" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="hidden-content">
+                <h4>Performance Tests</h4>
+                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
+              </div>
+              <div class="showed-content">
+                <img src="assets/images/portfolio-image.png" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+              <div class="hidden-content">
+                <h4>Data Analysis</h4>
+                <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
+              </div>
+              <div class="showed-content">
+                <img src="assets/images/portfolio-image.png" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+ <!--  <div id="blog" class="our-blog section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="section-heading">
+            <h2>Check Out What Is <em>Trending</em> In Our Latest <span>News</span></h2>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="top-dec">
+            <img src="assets/images/blog-dec.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a href="#"><img src="assets/images/big-blog-thumb.jpg" alt="Workspace Desktop"></a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i> 24 Mar 2021</li>
+                  <li><i class="fa fa-users"></i> TemplateMo</li>
+                  <li><i class="fa fa-folder"></i> Branding</li>
+                </ul>
+                <a href="#"><h4>SEO Agency &amp; Digital Marketing</h4></a>
+                <p>Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et dolore magna...</p>
+                <div class="main-blue-button">
+                  <a href="#">Discover More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="right-list">
+            <ul>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> 18 Mar 2021</span>
+                  <a href="#"><h4>New Websites &amp; Backlinks</h4></a>
+                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div class="right-image">
+                  <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> 14 Mar 2021</span>
+                  <a href="#"><h4>SEO Analysis &amp; Content Ideas</h4></a>
+                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div class="right-image">
+                  <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> 06 Mar 2021</span>
+                  <a href="#"><h4>SEO Tips &amp; Digital Marketing</h4></a>
+                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div class="right-image">
+                  <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <div class="section-heading">
+            <h2>Experience the Journey in Style: Classic Taxi Service - Your Trusted Ride Awaits</h2>
+            <p>Address : Jorhat PIN: 785001</p>
+            <div class="phone-info">
+              <h4>For any enquiry, Call Us: <span><i class="fa fa-phone"></i> <a href="tel:+91 7086086886">7086086886</a></span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form name="submit-to-google-sheet">
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="name" id="name" placeholder="Name" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="tel" name="phone" id="phone"  maxlength="10" placeholder="Phone Number" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="start" id="start" placeholder="Start Destination" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="end" id="end"  placeholder="End Destination" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="time" id="time"  placeholder="Pickup Time" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="date" id="inputdate" name="inputdate"  placeholder="Date" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-button ">Book Now</button>
+                </fieldset>
+              </div>
+            </div>
+            <!-- <div class="contact-dec">
+              <img src="assets/images/contact-decoration.png" alt="">
+            </div> -->
+          </form>
+          <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+          <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+          <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+
+          <script>
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbw2ROk8O7Hwt6bU2M4Gg9ex3usuzheLBzlKgP5DRbeyboKSkVMXBbHK5rBPHpUsUtmvnw/exec'
+          const form = document.forms['submit-to-google-sheet']
+
+          form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+         .then(response => console.log('Success!', response))
+         .catch(error => console.error('Error!', error.message))
+         })
+         </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+          <p>© Classic Taxi Service. 
+          
+          <!-- <br>Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/templatemo-custom.js"></script>
+  <script type="text/javascript">
+$(function(){
+    var dtToday = new Date();
+ 
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+     day = '0' + day.toString();
+    var maxDate = year + '-' + month + '-' + day;
+    $('#inputdate').attr('min', maxDate);
+});
 </script>
+
+</body>
+</html>
