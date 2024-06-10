@@ -419,7 +419,7 @@ https://templatemo.com/tm-562-space-dynamic
               <img src="assets/images/contact-decoration.png" alt="">
             </div> -->
           </form>
-          
+           <div id="loading-message" style="display: none;">Submitting...</div>
         </div>
       </div>
     </div>
@@ -462,7 +462,7 @@ $(function(){
           <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
           <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script> -->
 
-          <script>
+<!--           <script>
           const scriptURL = 'https://script.google.com/macros/s/AKfycbw2ROk8O7Hwt6bU2M4Gg9ex3usuzheLBzlKgP5DRbeyboKSkVMXBbHK5rBPHpUsUtmvnw/exec'
           const form = document.forms['submit-to-google-sheet']
 
@@ -475,7 +475,28 @@ $(function(){
          })
          .catch(error => console.error('Error!', error.message))
          })
-         </script>
+         </script> -->
+   <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw2ROk8O7Hwt6bU2M4Gg9ex3usuzheLBzlKgP5DRbeyboKSkVMXBbHK5rBPHpUsUtmvnw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const loadingMessage = document.getElementById('loading-message');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            loadingMessage.style.display = 'block'; // Show loading message
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                loadingMessage.style.display = 'none'; // Hide loading message
+                alert('Form submitted successfully!');
+                console.log('Success!', response);
+            })
+            .catch(error => {
+                loadingMessage.style.display = 'none'; // Hide loading message
+                console.error('Error!', error.message);
+                alert('An error occurred: ' + error.message);
+            });
+        })
+    </script>
 
 </body>
 </html>
