@@ -530,7 +530,7 @@ $(function(){
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
                 spinner.style.display = 'none'; // Hide spinner before showing alert
-                alert('Form submitted successfully!');
+                alert('Booking Confirmed - Thank you for choosing Classic Taxi Service!');
                 form.reset();
                 console.log('Success!', response);
             })
